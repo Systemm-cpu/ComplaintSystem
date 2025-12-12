@@ -1,0 +1,38 @@
+
+:root {
+  --ogra-green: #3AA469;
+  --ogra-green-dark: #0C512F;
+  --ogra-white: #FFFFFF;
+}
+
+body {
+  background: var(--ogra-white);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--ogra-green-dark);
+  color: var(--ogra-white);
+  width: 240px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar a {
+  color: var(--ogra-white);
+  transition: background 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: var(--ogra-green);
+}
+
+/* Topbar */
+.topbar {
+  background: var(--ogra-green);
+  color: var(--ogra-white);
+  padding: 10px 20px;
+}

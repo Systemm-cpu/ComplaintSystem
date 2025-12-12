@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/admin/login": "pages/admin/login.js",
+  "/admin/complaints": "pages/admin/complaints.js",
+  "/admin": "pages/admin.js",
+  "/admin/view/[id]": "pages/admin/view/[id].js"
+}

@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: ogra_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/data:/app/data
+    environment:
+      - PORT=5000
+      - JWT_SECRET=supersecretjwt
+      - SMTP_HOST=mail.ogra.org.pk        # Your SMTP host
+      - SMTP_PORT=465                    # 465/SSL/TLS
+      - SMTP_USER=it@ogra.org.pk         
+      - SMTP_PASS=Haris@786                 
+      - SMTP_FROM="OGRA COMPLAINT PORTAL <it@ogra.org.pk>"
+      - BASE_URL=http://172.17.9.13:3000
+
+  frontend:
+    build: ./frontend   
+    container_name: ogra_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE=http://172.17.9.13:5000
+    depends_on:
+      - backend
